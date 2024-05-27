@@ -2017,6 +2017,18 @@ start4.elf, start4x.elf, start4db.elf 和 start4cd.elf 是特定于 Raspberry Pi
 
 #### 内核文件 （*.img）
 
-#### 覆盖文件夹
+各种各样的 核心 树莓派型号对应的镜像文件：
+
+|文件名	|处理器	|树莓派型号	|备注
+|:---|:---|:---|:---
+|kernel.img |BCM2835	|圆周率 0、圆周率 1	 |
+|kernel7.img |BCM2836、BCM2837 |Pi 零 2 W、Pi 2、Pi 3	|后来Pi 2使用了BCM2837
+|kernel7l.img |BCM2711	|树莓派 4、树莓派 400、CM4、CM4S	|大型物理地址扩展 (LPAE)
+|kernel8.img |BCM2837、BCM2711、BCM2712	|Pi 零 2 W、Pi 2、Pi 3、Pi 4、Pi 400、CM4、CM4S、Pi 5	|64位内核。带有 BCM2836 的 Raspberry Pi 2 不支持 64 位内核。
+|kernel_2712.img |BCM2712	|圆周率5	|Pi 5 优化 64位内核.
 
 
+#### overlays文件夹
+
+
+包含设备树覆盖。它们用于配置各种硬件设备，例如第三方声卡。条目于 config.txt 选择这些叠加层。有关更多信息，请参阅 设备树、覆盖层和参数.
